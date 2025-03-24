@@ -21,7 +21,9 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-
+- task: replacetokens@6
+  inputs:
+    sources: '**/*.chtml'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
