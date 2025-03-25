@@ -6,7 +6,13 @@
     <h1 class="display-4">Welcome</h1>
     <br/>
     <br/>
-    <div><b>#{BUILD_NUMBER}#</b></div>
+    <div class='alert alert-warning'>
+        <h3>Environment</h3>
+        <hr /><b>Build:</b> #{Build.BuildNumber}#
+        <br /><b>Machine:</b> @System.Environment.MachineName
+        <br /><b>OS:</b> @System.Environment.OSVersion
+        <br /><b>Framework:</b> @System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription
+    </div>
     <div>I am Ahmed Ashrf Elhawary</div>
     <div>LinkedIn profile <a href="https://www.linkedin.com/in/ahmad-ashraf-b212998/" target="_blank"> Ahmed Elhawary</a></div>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
