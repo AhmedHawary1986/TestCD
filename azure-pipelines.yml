@@ -59,4 +59,4 @@ steps:
       azureSubscription: 'cdmanagedidentity'
       appType: 'webApp'
       WebAppName: 'AhmedElhawary'
-      packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+      packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*TestCD.zip'
