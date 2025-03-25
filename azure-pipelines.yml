@@ -41,3 +41,11 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: AzureRmWebAppDeployment@5
+  inputs:
+      ConnectionType: 'AzureRM'
+      azureSubscription: 'cdmanagedidentity'
+      appType: 'webApp'
+      WebAppName: 'AhmedElhawary'
+      packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
