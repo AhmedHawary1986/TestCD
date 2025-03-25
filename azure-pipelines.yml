@@ -21,11 +21,20 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-- task: replacetokens@6
+- task: qetza.replacetokens.replacetokens-task.replacetokens@5
+  displayName: 'Replace Tokens in .chtml files'
   inputs:
-    sources: '**/*.chtml'
-  env:
-    BUILD_NUMBER: $(Build.BuildNumber)
+    rootDirectory: '$(Build.SourcesDirectory)'  # Adjust as needed
+    targetFiles: '**/*.chtml'  # Targeting all .chtml files
+    encoding: 'auto'
+    tokenPattern: 'custom'
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    useLegacyPattern: false
+  
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
