@@ -18,6 +18,8 @@ variables:
 steps:
 - script: echo Hello,World
   displayName: 'Run a one line script'
+- script: 
+   az --version
 
 - task: NuGetToolInstaller@1
 
